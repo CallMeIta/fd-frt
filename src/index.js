@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StyledEngineProvider } from '@mui/material/styles';
+import { UsersContextProvider } from './components/context/users-context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StyledEngineProvider injectFirst={true}>
+      <UsersContextProvider>
+        <App />
+      </UsersContextProvider>
+    </StyledEngineProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
